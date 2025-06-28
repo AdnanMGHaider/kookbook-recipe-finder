@@ -1,70 +1,157 @@
-# Getting Started with Create React App
+# Koobook 🍳 Recipe Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Demo Status](https://img.shields.io/badge/demo-online-brightgreen?style=flat)](https://kookbook.vercel.app)
 
-## Available Scripts
+🔗 **Live Demo:** https://kookbook.vercel.app  
+📂 **Source Code:** https://github.com/AdnanMGHaider/kookbook-recipe-finder
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Screenshot
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Koobook screenshot](docs/screenshots/kookbook-screenshot.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Table of Contents
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [About](#about)
+- [Key Features](#key-features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running Locally](#running-locally)
+  - [Deploying to Vercel](#deploying-to-vercel)
+- [Project Structure](#project-structure)
+- [Future Enhancements](#future-enhancements)
+- [Contributing](#contributing)
+- [Author](#author)
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## About
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Koobook Recipe Finder** is a single-page React application that lets users discover 600 k+ recipes by cuisine, keyword, or dietary preference using the Spoonacular API.  
+It showcases client-side routing, animated transitions, lazy-loaded chunks, and a polished, mobile-first UI—perfect for demonstrating modern React skills to hiring managers.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Key Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+|                                                                  |                                                            |
+| ---------------------------------------------------------------- | ---------------------------------------------------------- |
+| 🔍 **Instant search** – debounced queries with loading skeletons | 🍝 **Cuisine pages** – Italian, Thai, American, etc.       |
+| 📋 **Recipe detail** – ingredients, instructions, nutrition      | 🎬 **Smooth animations** – Framer Motion route transitions |
+| 🖼 **Responsive carousel** – Swiper touch & mouse-drag            | 🔐 **Secure API key** – stored in `.env`, ignored in Git   |
+| 🏎 **Code-splitting** – React lazy + Suspense                     |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Tech Stack
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| Layer          | Tools / Libraries                      |
+| -------------- | -------------------------------------- |
+| **UI & State** | React 17, React Router v6, Context API |
+| **Styling**    | CSS Modules                            |
+| **Animation**  | Framer Motion                          |
+| **Carousel**   | Swiper.js 8                            |
+| **Data API**   | Spoonacular REST                       |
+| **Build**      | Create-React-App (react-scripts 5)     |
+| **Hosting**    | Vercel (static)                        |
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Getting Started
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Prerequisites
 
-### Code Splitting
+- **Node 18+** and **npm 9+** (or Yarn/PNPM)
+- Spoonacular API key (free tier works)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Installation
 
-### Analyzing the Bundle Size
+```bash
+git clone https://github.com/AdnanMGHaider/kookbook-recipe-finder.git
+cd kookbook-recipe-finder
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Environment Variables
 
-### Making a Progressive Web App
+Create a .env file in the project root:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+REACT_APP_API_KEY=<your-spoonacular-key>
+```
 
-### Advanced Configuration
+### Running Locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+npm start        # http://localhost:3000
+npm run build    # production bundle in /build
+```
 
-### Deployment
+### Deploying to Vercel
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Push the repo to GitHub.
+2. Vercel → New Project → import the repo.
+3. Build settings:
 
-### `npm run build` fails to minify
+   - **Build Command:** `npm run build`
+   - **Output Dir:** `build`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. Add env var `REACT_APP_API_KEY`.
+5. Click Deploy. Done!
+
+---
+
+## Project Structure
+
+```text
+kookbook-recipe-finder/
+├── public/
+├── src/
+│   ├── Assets/
+│   ├── Components/
+│   ├── Pages/
+│   ├── App.js
+│   └── index.js
+├── docs/
+│   └── screenshots/
+│       └── kookbook-screenshot.png
+├── .env.example
+└── README.md
+```
+
+## Future Enhancements
+
+- “Save to favourites” with localStorage / backend
+- PWA offline caching
+- Jest + RTL test suite
+- Dark-mode toggle
+
+## Contributing
+
+1. Fork the repo
+2. Create a feature branch:
+   ```bash
+   git checkout -b feature/<name>
+   ```
+3. Commit your work
+   ```bash
+   git commit -m "Add <feature>"
+   ```
+4. Push your branch
+
+   ```bash
+   git push origin feature/<name>
+   ```
+
+5. Open a Pull Request
+
+---
+
+## Author
+
+> **Built & maintained by [Adnan Haider](https://www.linkedin.com/in/adnan-haider-dev/)**
