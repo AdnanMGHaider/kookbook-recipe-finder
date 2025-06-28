@@ -2,7 +2,7 @@
 
 [![Demo Status](https://img.shields.io/badge/demo-online-brightgreen?style=flat)](https://kookbook.vercel.app)
 
-🔗 **Live Demo:** https://kookbook.vercel.app  
+🔗 **Live Demo:** https://kookbook-recipe-finder.vercel.app/  
 📂 **Source Code:** https://github.com/AdnanMGHaider/kookbook-recipe-finder
 
 ---
